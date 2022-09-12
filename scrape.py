@@ -26,7 +26,7 @@ def extract_function(source_code, name):
         line_without_indentation = line[indentation:]
         result.append(line_without_indentation)
 
-        if line_without_indentation[0] == "}":
+        if (line_without_indentation or [" "])[0] == "}":
             break
 
     return "\n".join(result)
