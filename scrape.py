@@ -1,4 +1,6 @@
+import sys
 import logging
+
 import requests
 from bs4 import BeautifulSoup
 
@@ -32,13 +34,13 @@ def extract_function(source_code, name):
     return "\n".join(result)
 
 
-def main():
+def main(function_name):
     response = requests.get(search_link(search_period="HT21"))
     soup = BeautifulSoup(response.text, features="html.parser")
     code = soup.select("main script")[-1].contents[0]
 
-    print(extract_function(source_code=code, name="doFileDownload"))
+    print(extract_function(source_code=code, name=function_name))
 
 
 if __name__ == "__main__":
-    main()
+    main(function_name=sys.argv[1] if len(sys.argv) > 1 else "doFileDownload")
