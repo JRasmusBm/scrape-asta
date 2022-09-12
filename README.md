@@ -24,12 +24,16 @@ pip install bs4 requests
 python -m scrape doFileDownload
 ```
 
+[Back to Top](#scrape-asta)
+
 ## Project Background
 
 Student enrollment statistics are public information in Sweden. A friend of mine
 was interested in performing data analysis on the data. Without knowing what the
 purpose was I wanted to help him extract the data that he needed, using their
 API if possible.
+
+[Back to Top](#scrape-asta)
 
 ## Challenge
 
@@ -41,6 +45,8 @@ My friend explained to me that he wanted to automate the following flow:
 4. Click a button on the resulting page with the text "Spara som CSV-fil" (Save
    as CSV-file)
 
+[Back to Top](#scrape-asta)
+
 ## Choice of Technologies
 
 My friend wants to learn Python, so that directed my choice of technologies. In
@@ -49,12 +55,16 @@ most commonly libraries for doing scraping in Python,
 [requests](https://pypi.org/project/requests/) and
 [beautifulsoup4](https://pypi.org/project/beautifulsoup4/).
 
+[Back to Top](#scrape-asta)
+
 ## Minimizing Web Scraping
 
 The amount of web scraping used to solve any problem should be minimized. This is because most other approaches are faster, less brittle and are less dependent on the design of any given web page. Accordingly, I first explored the site to discover whether the steps in
 [Challenge](#challenge) could somehow be reduced.
 
 I discovered that the result of the selected time period is sent as a [search parameter](https://developer.mozilla.org/en-US/docs/Web/API/URL/search) to the second, meaning that the first three steps can be replaced by a request to the second page with [interpolated values for the search string and the time period](https://github.com/jrasmusbm/scrape/blob/6bc3358a944d4010b971a195828f88ece196af9b/scrape.py#L12-L13).
+
+[Back to Top](#scrape-asta)
 
 ## Extracting Button Click Handler
 
@@ -72,3 +82,5 @@ to query for the CSV.
 
 The next step would be to reproduce that logic in python. Who knows, maybe we
 can hit the API directly and do not have to do web scraping at all? 🤔
+
+[Back to Top](#scrape-asta)
