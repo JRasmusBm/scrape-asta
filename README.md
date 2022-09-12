@@ -4,11 +4,25 @@ This README is intended to help new developers, attempting to do web scraping fo
 the first time, to understand how to build something similar to this web
 scraper.
 
+- [Getting Started](#getting-started)
 - [Project Background](#project-background)
 - [Challenge](#challenge)
 - [Choice of Technologies](#choice-of-technologies)
 - [Minimizing Web Scraping](#minimizing-web-scraping)
 - [Extracting Button Click Handler](#extracting-button-click-handler)
+
+## Getting Started
+
+```sh
+# Set up virtual environment:
+python -m venv .venv
+# Activate virtual environment (this step is repeated for every new shell):
+source ./.venv/bin/activate
+# Install dependencies
+pip install bs4 requests
+# Try running it:
+python -m scrape doFileDownload
+```
 
 ## Project Background
 
